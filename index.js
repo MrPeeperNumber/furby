@@ -116,17 +116,6 @@ route.get('/search', async (ctx) => {
 
 });
 
-route.get('/search?', async (ctx) => {
-	console.log('connected to root route');
-
-	const results = await Blog.find({});
-	console.log(results);
-	await ctx.render('userprofile.njk', {
-		posts: results
-	});
-
-});
-
 /*** USER ROUTES ***/
 // get user by ID
 route.get('/user/:id', async (ctx) => {
@@ -244,7 +233,7 @@ route.get('/create', async (ctx) => {
 // 	else console.log('wrong password');
 // 	await ctx.render('complete.njk');
 
-// });
+// // });
 
 // route.get('/:name', async (ctx) => {
 // 	await ctx.render('./index.njk', {
