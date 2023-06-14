@@ -23,7 +23,9 @@ db.on('disconnected', () => console.log('Mongo is Disconnected'));
 db.on('open', () => console.log('Connection made!'));
 
 //Model Schema
-const Blog = require('./models/blog.js');
+const Post = require('./models/post.js');
+const Profile = require('./models/profile.js');
+const User = require('./models/user.js');
 
 // Create Koa server
 const koa = require ('koa');
@@ -59,7 +61,7 @@ nunj.configure('./views', {autoescape: true});
 route.get('/', async (ctx) => {
 	console.log('connected to root route');
 
-	const results = await Blog.find({});
+	const results = await Post.find({});
 	console.log(results);
 	await ctx.render('index.njk', {
 		posts: results

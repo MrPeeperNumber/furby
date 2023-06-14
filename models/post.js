@@ -1,21 +1,23 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-j// Post Draft Schema
-const postDraft = new Schema({
-	username: String,
-	user_id: Number,
-	content: ,
-});
-const postDraft = mongoose.model('users', newUserSchema);
-
-// Post Schema
+// Post Draft Schema
 const post = new Schema({
-	username: String,
-	user_id: Number,
-	content: ,
+	user_id: mongoose.ObjectId,
+	title: String,
+	description: String,
+	tags: [mongoose.ObjectId],
+	contentURL: String,
+	contentType: Number,								// assign content to a number
+	category: Number,									// assign category to a number
+	species: Number,									// assign species to number
+	gender: Number,										// assign gender to number
+	rating: Number,
+	faves: Number,
+	views: Number,
+	createdAt: Date,
+	updatedAt: Date,
 });
-const post = mongoose.model('users', newUserSchema);
+const Post = mongoose.model('posts', post);
 
-module.exports = postDraft;
-module.exports = post;
+module.exports = Post;

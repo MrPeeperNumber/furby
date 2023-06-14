@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-	user: String,
+	username: String,
 	password: String,
 	email: String,
-	id: String
+	avatarURL: String,
+	createdAt: Date
 });
 const User = mongoose.model('users', userSchema)
 
